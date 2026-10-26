@@ -17,6 +17,7 @@ public:
 
                 return slow;
             }
+            if(fast == nums.size()) break;
         }
 
         return -1;
