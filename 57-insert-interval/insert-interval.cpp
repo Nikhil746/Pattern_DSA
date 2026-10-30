@@ -3,14 +3,13 @@ public:
     vector<vector<int>> insert(vector<vector<int>>& intervals,
                                vector<int>& newInterval) {
         int n = intervals.size(), pos = 0;
-        // sort(intervals.begin(), intervals.end());
         vector<vector<int>> res;
 
         if (n == 0) {
             res.push_back({newInterval[0], newInterval[1]});
             return res;
         }
-        
+
         int start1 = intervals[0][0], end1 = intervals[0][1];
         int interval1 = newInterval[0], interval2 = newInterval[1];
         for (int i = 0; i < n; i++) {
@@ -22,10 +21,6 @@ public:
         }
         intervals.insert(intervals.begin() + pos, {interval1, interval2});
 
-        // for (auto& row : intervals)
-        //     for (int x : row)
-        //         cout << x << " ";
-        // cout << intervals;
         start1 = intervals[0][0], end1 = intervals[0][1];
         for (int i = 1; i < n + 1; i++) {
             int start2 = intervals[i][0];
