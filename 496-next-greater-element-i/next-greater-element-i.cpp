@@ -4,8 +4,8 @@ public:
         vector<int> res;
         int n = nums1.size(), m = nums2.size();
         stack<int> st;
-        map<int, int> m1;
-        
+        unordered_map<int, int> m1;
+
         for (int i = 0; i < m; i++) {
             while (!st.empty() && nums2[i] > st.top()) {
                 m1[st.top()] = nums2[i];
